@@ -1,26 +1,38 @@
 #!/usr/bin/python3
-"""Define a MagicClass matching exactly a bytecode provided by Alx."""
+"""Define MagicClass to match a specific bytecode format specified by Alx."""
 
 import math
 
 
 class MagicClass:
-    """Represent a circle."""
+	"""Represent a circle with methods to compute its area and circumference."""
 
-    def __init__(self, radius=0):
-        """Initialize a MagicClass.
-        Arg:
-            radius (float or int): The radius of the new MagicClass.
-        """
-        self.__radius = 0
-        if type(radius) is not int and type(radius) is not float:
-            raise TypeError("radius must be a number")
-        self.__radius = radius
+	def __init__(self, radius=0):
+	"""Initialize a new instance of MagicClass, representing a circle.
 
-    def area(self):
-        """Return the area of the MagicClass."""
-        return (self.__radius ** 2 * math.pi)
+	Args:
+	radius (float or int): The circle's radius. Defaults to 0.
+	Raises:
+	TypeError: If the radius is not a float or int.
+	"""
+	self.__radius = 0	# Internal storage for the radius
+	if not isinstance(radius, (int, float)):
+	raise TypeError("radius must be a number")
+	self.__radius = radius
 
-    def circumference(self):
-        """Return The circumference of the MagicClass."""
-        return (2 * math.pi * self.__radius)
+	def area(self):
+	"""Calculate and return the circle's area.
+
+	Returns:
+	float: The area of the circle.
+	"""
+	return (self.__radius ** 2 * math.pi)
+
+	def circumference(self):
+	"""Calculate and return the circle's circumference.
+
+	Returns:
+	float: The circumference of the circle.
+	"""
+	return (2 * math.pi * self.__radius)
+
